@@ -12,6 +12,7 @@ pub fn build(b: *std.build.Builder) void {
     const mode = b.standardReleaseOptions();
 
     const exe = b.addExecutable("ziglang-rest-api", "src/main.zig");
+    exe.addPackagePath("zhp", "zig-packages/zhp-0.9.0/src/zhp.zig");
     exe.setTarget(target);
     exe.setBuildMode(mode);
     exe.install();
